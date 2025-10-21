@@ -12,6 +12,12 @@ connectDB();
 const app = express();
 app.use(express.json());
 
+// Root route
+app.get('/', (req, res) => {
+  res.send('Backend server is running 🚀');
+});
+
+// API routes
 app.use('/api/auth', authRoutes);
 app.use('/api/students', studentRoutes);
 app.use('/api/companies', companyRoutes);
